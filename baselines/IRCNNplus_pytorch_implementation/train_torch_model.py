@@ -169,10 +169,10 @@ if __name__ == "__main__":
         "=============== DEFINE MODEL & SETTINGS =============== "
 
 
-        run_name = f"K{K}_ks1_{ks1}_ks2_{ks2}_S{S}_bs{batch_size}_{data_gen_type}_sortYtrue_s{seed}" #This is the name of the run, which will be used for saving the model.
+        run_name = f"K{K}_ks1_{ks1}_ks2_{ks2}_S{S}_bs{batch_size}_{data_gen_type}_s{seed}" #This is the name of the run, which will be used for saving the model.
 
         today = date.today()
-        save_dir = make_unique_path(Path(__file__).resolve().parent / "outputs" / "IRCNNplus" / (f"{str(today.year)[-2:]}{today.month:02d}{today.day:02d}_" +run_name))
+        save_dir = make_unique_path(Path(__file__).resolve().parent / "trained_models" / "IRCNNplus" / (f"{str(today.year)[-2:]}{today.month:02d}{today.day:02d}_" +run_name))
         
         run_name = save_dir.stem
 

@@ -19,9 +19,11 @@ def normalized_l2_error(x,y):
 
 def run_inference_synthetic_testset(model, save_dir=None, K=2):
     
-    with open(str(Path.cwd() / f"data/synthetic_test_set_K{K}.pkl"), 'rb') as f:
-        data = pickle.load(f)
-
+    try:
+        with open(str(Path.cwd() / f"data/synthetic_test_set_K{K}.pkl"), 'rb') as f:
+            data = pickle.load(f)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Data file synthetic_test_set_K{K}.pkl not found in data/ subfolder. Please download the data from https://doi.org/10.17026/PT/1QTZ39 and place it in the data/ subfolder.")
     x = data['x']  # [nr_examples, 1, N] 
     y = data['y']  # [nr_examples, nr_modes, N]
     fs, T = model.fs, model.T
