@@ -1,0 +1,11 @@
+.*
+__pycache__/
+wandb/
+*.asv
+experiments/trained_models/
+data/synthetic_test_set*
+baselines/emd/
+baselines/vmd/
+baselines/ssd/
+baselines/SVMD/*.mat
+baselines/SRMDmain/output_seed314/
