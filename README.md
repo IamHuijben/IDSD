@@ -43,9 +43,12 @@ The trained model will be stored in experimments/trained_models/IDSD.
 The training script automatically runs inference as well on the synthetic test data sets that were used in the paper.
 To this end, the script will try to read the data from the data/ subfolder. Since the data files together are too large for this Github repository, you can download them from [here](https://doi.org/10.17026/PT/1QTZ39).
 After downloading the datasets, place them (without changing their names) in the data/ subfolder.
-To create your own new test dataset, you can use the data/generate_test_data.py file, but if you want to make sure that you use exactly the same test data, you should download the test datasets that we already generated.
 
 Additionallly, the script runs inference no the tsunami data. It first finetunes the model on measurement in the month before the tsunami hit, after which inference is run on the data from 10-14 March 2011, when the tsunami hit. 
+
+To create your own new test dataset, you can use the data/generate_test_data.py file, but if you want to make sure that you use exactly the same test data, you should download the test datasets that we already generated.
+
+
 
 ## Note on the use of IDSD in further studies
 The promise of a deep-learning-based model like IDSD is that it can be trained on any type of data distribution. As long as you have data available with the ground-truth component(s), you can train the model on that data.
