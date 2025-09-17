@@ -17,9 +17,9 @@ The experiments were all run on the mps of a Mac Book Pro M4, with python 3.12.2
 
 To recreate this environment:
 
-Download the [anaconda package](https://www.anaconda.com/)
+Download the [anaconda package](https://www.anaconda.com/).
 
-In the anaconda prompt run:
+In the terminal (Linux/OSX) or in the anaconda prompt (Windows) run:
 
 ```conda create -n IDSD_env python==3.12.2```
 
@@ -43,6 +43,7 @@ The trained model will be stored in experimments/trained_models/IDSD.
 The training script automatically runs inference as well on the synthetic test data sets that were used in the paper.
 To this end, the script will try to read the data from the data/ subfolder. Since the data files together are too large for this Github repository, you can download them from [here](https://doi.org/10.17026/PT/1QTZ39).
 After downloading the datasets, place them (without changing their names) in the data/ subfolder.
+To create your own new test dataset, you can use the data/generate_test_data.py file, but if you want to make sure that you use exactly the same test data, you should download the test datasets that we already generated.
 
 Additionallly, the script runs inference no the tsunami data. It first finetunes the model on measurement in the month before the tsunami hit, after which inference is run on the data from 10-14 March 2011, when the tsunami hit. 
 
